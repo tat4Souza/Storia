@@ -11,15 +11,16 @@ $surface-600: hsl(0, 11%, 36%);
 $surface-700: hsl(0, 11%, 28%);
 $surface-800: hsl(0, 10%, 19%);
 $surface-900: hsl(0, 11%, 15%);
+$surface-1000: hsl(0, 11%, 7%);
 
 $primary-light: hsl(145, 48%, 52%);
-$primary: hsl(152, 48%, 42%);
-$primary-dark: hsl(160, 48%, 32%);
+$primary: #389f6f;
+$primary-dark: #2a795f;
 
-$secondary-light: hsl(9, 91%, 54%);
-$secondary: hsl(9, 91%, 44%);
-$secondary-dark: hsl(9, 91%, 34%);
+$secondary-light: rgb(244, 63, 31);
+$secondary: #d6290a;
+$secondary-dark: #a61f08;
 
-$tertiary-light: hsl(24, 48%, 52%);
-$tertiary: hsl(24, 48%, 42%);
+$tertiary-light: #bf794a;
+$tertiary: #9f6138;
 $tertiary-dark: hsl(24, 48%, 32%);

@@ -1,4 +1,71 @@
-.login {
+.wave-container {
   height: 100vh;
-  background-color: $surface-900;
+  background-image: linear-gradient(to bottom, $surface-800, $surface-1000);
+  overflow: hidden;
+  position: relative;
+}
+
+.logo {
+  position: absolute;
+  transform: translateX(-50%);
+  top: 10rem;
+  left: 50%;
+  animation: moveFromDown cubic-bezier(0.93, -0.1, 0.39, 1.02) 1s;
+}
+
+.cloud {
+  position: absolute;
+  transform: translateX(-50%);
+  filter: drop-shadow(0 2rem 4rem rgba(232, 226, 232, 0.2));
+
+  &--1 {
+    top: 5rem;
+    max-width: 30rem;
+    left: 65%;
+    animation: moveLeft cubic-bezier(0.93, -0.1, 0.39, 1.02) 1.2s;
+  }
+
+  &--2 {
+    top: 2rem;
+    max-width: 50rem;
+    left: 35%;
+    animation: moveRight cubic-bezier(0.93, -0.1, 0.39, 1.02) 1.2s;
+  }
+}
+
+.wave {
+  width: 200%;
+  position: absolute;
+  animation: wave linear 40s infinite;
+  filter: drop-shadow(0 2rem 3rem rgba($primary-light, 0.3));
+
+  &--1 {
+    top: 88%;
+    fill: $primary-light;
+    z-index: 2;
+  }
+
+  &--2 {
+    top: 82%;
+    fill: $primary;
+    z-index: 1;
+    animation-duration: 50s;
+  }
+
+  &--3 {
+    top: 75%;
+    fill: $primary-dark;
+    z-index: 0;
+    animation-duration: 60s;
+  }
+
+  &--dragon {
+    position: absolute;
+    width: 200%;
+    top: 80%;
+    fill: $secondary-dark;
+    animation: wave linear 30s infinite;
+    filter: drop-shadow(0 2rem 2rem rgba($secondary-light, 0.3));
+    z-index: 0;
+  }
 }

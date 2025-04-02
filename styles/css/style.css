@@ -1,4 +1,42 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@keyframes wave {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+@keyframes moveLeft {
+  0% {
+    left: 50%;
+    opacity: 0.6;
+  }
+  100% {
+    left: 65%;
+    opacity: 1;
+  }
+}
+@keyframes moveRight {
+  0% {
+    left: 40%;
+    opacity: 0.6;
+  }
+  100% {
+    left: 35%;
+    opacity: 1;
+  }
+}
+@keyframes moveFromDown {
+  0% {
+    top: 13rem;
+    opacity: 0;
+  }
+  100% {
+    top: 10rem;
+    opacity: 1;
+  }
+}
 *,
 *::before,
 *::after {
@@ -19,9 +57,70 @@ body {
   color: hsl(0, 10%, 19%);
 }
 
-.login {
+.wave-container {
   height: 100vh;
-  background-color: hsl(0, 11%, 15%);
+  background-image: linear-gradient(to bottom, hsl(0, 10%, 19%), hsl(0, 11%, 7%));
+  overflow: hidden;
+  position: relative;
+}
+
+.logo {
+  position: absolute;
+  transform: translateX(-50%);
+  top: 10rem;
+  left: 50%;
+  animation: moveFromDown cubic-bezier(0.93, -0.1, 0.39, 1.02) 1s;
+}
+
+.cloud {
+  position: absolute;
+  transform: translateX(-50%);
+  filter: drop-shadow(0 2rem 4rem rgba(232, 226, 232, 0.2));
+}
+.cloud--1 {
+  top: 5rem;
+  max-width: 30rem;
+  left: 65%;
+  animation: moveLeft cubic-bezier(0.93, -0.1, 0.39, 1.02) 1.2s;
+}
+.cloud--2 {
+  top: 2rem;
+  max-width: 50rem;
+  left: 35%;
+  animation: moveRight cubic-bezier(0.93, -0.1, 0.39, 1.02) 1.2s;
+}
+
+.wave {
+  width: 200%;
+  position: absolute;
+  animation: wave linear 40s infinite;
+  filter: drop-shadow(0 2rem 3rem rgba(73.848, 191.352, 122.808, 0.3));
+}
+.wave--1 {
+  top: 88%;
+  fill: hsl(145, 48%, 52%);
+  z-index: 2;
+}
+.wave--2 {
+  top: 82%;
+  fill: #389f6f;
+  z-index: 1;
+  animation-duration: 50s;
+}
+.wave--3 {
+  top: 75%;
+  fill: #2a795f;
+  z-index: 0;
+  animation-duration: 60s;
+}
+.wave--dragon {
+  position: absolute;
+  width: 200%;
+  top: 80%;
+  fill: #a61f08;
+  animation: wave linear 30s infinite;
+  filter: drop-shadow(0 2rem 2rem rgba(244, 63, 31, 0.3));
+  z-index: 0;
 }
 
 /*# sourceMappingURL=style.css.map */
