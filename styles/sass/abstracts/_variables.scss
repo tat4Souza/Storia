@@ -1,3 +1,11 @@
+:root {
+  --surface-100: hsl(0, 18%, 96%);
+
+  --primary-light: hsl(145, 48%, 52%);
+  --primary: #389f6f;
+  --primary-dark: #2a795f;
+  --secondary: #d6290a;
+}
 // COLORS
 
 $surface-0: hsl(0, 18%, 100%);
@@ -24,3 +32,8 @@ $secondary-dark: #a61f08;
 $tertiary-light: #bf794a;
 $tertiary: #9f6138;
 $tertiary-dark: hsl(24, 48%, 32%);
+
+// FONTS
+$default-font-size: 1.4rem;
+$default-font-family: "Noto Sans";
+$font-poppins: "Poppins";

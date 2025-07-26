@@ -1,6 +1,7 @@
 .wave-container {
   height: 100vh;
-  background-image: linear-gradient(to bottom, $surface-800, $surface-1000);
+  background-color: $surface-1000;
+  //background-image: linear-gradient(to bottom, $surface-900, $surface-1000);
   overflow: hidden;
   position: relative;
 }
@@ -20,14 +21,14 @@
 
   &--1 {
     top: 5rem;
-    max-width: 30rem;
+    max-width: 20rem;
     left: 65%;
     animation: moveLeft cubic-bezier(0.93, -0.1, 0.39, 1.02) 1.2s;
   }
 
   &--2 {
     top: 2rem;
-    max-width: 50rem;
+    max-width: 40rem;
     left: 35%;
     animation: moveRight cubic-bezier(0.93, -0.1, 0.39, 1.02) 1.2s;
   }
@@ -36,27 +37,27 @@
 .wave {
   width: 200%;
   position: absolute;
-  animation: wave linear 40s infinite;
-  filter: drop-shadow(0 2rem 3rem rgba($primary-light, 0.3));
+  filter: drop-shadow(0 2rem 2 rem rgba($primary-light, 0.3));
 
   &--1 {
     top: 88%;
     fill: $primary-light;
     z-index: 2;
+    animation: waveToLeft linear 40s infinite;
   }
 
   &--2 {
     top: 82%;
     fill: $primary;
     z-index: 1;
-    animation-duration: 50s;
+    animation: waveToRight linear 50s infinite;
   }
 
   &--3 {
     top: 75%;
     fill: $primary-dark;
     z-index: 0;
-    animation-duration: 60s;
+    animation: waveToLeft linear 60s infinite;
   }
 
   &--dragon {

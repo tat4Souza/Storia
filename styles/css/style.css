@@ -1,10 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-@keyframes wave {
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@keyframes waveToRight {
   0% {
     transform: translateX(0);
   }
   100% {
     transform: translateX(-50%);
+  }
+}
+@keyframes waveToLeft {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
   }
 }
 @keyframes moveLeft {
@@ -37,6 +46,24 @@
     opacity: 1;
   }
 }
+@keyframes rippleEffect {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(20);
+    opacity: 0;
+  }
+}
+:root {
+  --surface-100: hsl(0, 18%, 96%);
+  --primary-light: hsl(145, 48%, 52%);
+  --primary: #389f6f;
+  --primary-dark: #2a795f;
+  --secondary: #d6290a;
+}
+
 *,
 *::before,
 *::after {
@@ -51,15 +78,50 @@ html {
 
 body {
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: "Noto Sans", sans-serif;
   font-weight: 400;
   line-height: 1;
   color: hsl(0, 10%, 19%);
 }
 
+.button {
+  padding: 1rem 2.6rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  overflow: hidden;
+  color: hsl(0, 18%, 96%);
+  text-transform: capitalize;
+  font-family: "Noto Sans";
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+.button:hover {
+  transform: scale(0.95);
+}
+.button > .button--ripple {
+  width: 1.5rem;
+  height: 1.5rem;
+  position: absolute;
+  border-radius: 100%;
+  transform: translate(-50%, -50%);
+  animation: rippleEffect 0.6s ease forwards;
+}
+.button > .content {
+  position: relative;
+  z-index: 2;
+  pointer-events: none;
+}
+.button--outlined {
+  background-color: transparent;
+  border: 1px solid currentColor;
+}
+
 .wave-container {
   height: 100vh;
-  background-image: linear-gradient(to bottom, hsl(0, 10%, 19%), hsl(0, 11%, 7%));
+  background-color: hsl(0, 11%, 7%);
   overflow: hidden;
   position: relative;
 }
@@ -79,13 +141,13 @@ body {
 }
 .cloud--1 {
   top: 5rem;
-  max-width: 30rem;
+  max-width: 20rem;
   left: 65%;
   animation: moveLeft cubic-bezier(0.93, -0.1, 0.39, 1.02) 1.2s;
 }
 .cloud--2 {
   top: 2rem;
-  max-width: 50rem;
+  max-width: 40rem;
   left: 35%;
   animation: moveRight cubic-bezier(0.93, -0.1, 0.39, 1.02) 1.2s;
 }
@@ -93,25 +155,25 @@ body {
 .wave {
   width: 200%;
   position: absolute;
-  animation: wave linear 40s infinite;
-  filter: drop-shadow(0 2rem 3rem rgba(73.848, 191.352, 122.808, 0.3));
+  filter: drop-shadow(0 2rem 2 rem rgba(73.848, 191.352, 122.808, 0.3));
 }
 .wave--1 {
   top: 88%;
   fill: hsl(145, 48%, 52%);
   z-index: 2;
+  animation: waveToLeft linear 40s infinite;
 }
 .wave--2 {
   top: 82%;
   fill: #389f6f;
   z-index: 1;
-  animation-duration: 50s;
+  animation: waveToRight linear 50s infinite;
 }
 .wave--3 {
   top: 75%;
   fill: #2a795f;
   z-index: 0;
-  animation-duration: 60s;
+  animation: waveToLeft linear 60s infinite;
 }
 .wave--dragon {
   position: absolute;
