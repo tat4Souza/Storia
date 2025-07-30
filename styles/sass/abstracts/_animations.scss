@@ -1,6 +1,6 @@
 @keyframes waveToRight {
   0% {
-    transform: translateX(0);
+    transform: translateX(-15%);
   }
 
   100% {
@@ -14,9 +14,11 @@
   }
 
   100% {
-    transform: translateX(0);
+    transform: translateX(-15%);
   }
 }
+
+//SVGS ONLY EFFECTS
 
 @keyframes moveLeft {
   0% {
@@ -64,5 +66,59 @@
   100% {
     transform: translate(-50%, -50%) scale(20);
     opacity: 0;
+  }
+}
+
+@keyframes moon {
+  0% {
+    transform: translateX(-50%) scale(1.4);
+    top: 12rem;
+    left: 50%;
+    opacity: 0;
+  }
+
+  20% {
+    top: 9rem;
+  }
+
+  30% {
+    top: 10rem;
+    opacity: 1;
+  }
+
+  60% {
+    transform: translateX(-50%) rotate(-10deg) scale(1.4);
+  }
+
+  90% {
+    transform: translateX(-50%) rotate(0deg);
+  }
+
+  100% {
+    top: 35%;
+    left: 54%;
+    transform: translateX(-50%) scale(1) rotate(0deg);
+  }
+}
+
+@keyframes logo {
+  0% {
+    top: -200%;
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 0;
+  }
+
+  50% {
+    top: -5%;
+    opacity: 1;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
   }
 }

@@ -1,37 +1,118 @@
 .wave-container {
-  height: 100vh;
-  background-color: $surface-1000;
-  //background-image: linear-gradient(to bottom, $surface-900, $surface-1000);
+  height: 95vh;
   overflow: hidden;
   position: relative;
+  transform: translateY(-95vh);
 }
 
-.logo {
+.section-logo {
+  height: 100vh;
+  width: 100%;
+  background-color: $surface-1000;
+  background-image: linear-gradient(
+    to top,
+    rgba($surface-200, 0.2),
+    transparent 55%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-wrapper {
+  position: relative;
+  animation: logo cubic-bezier(0.49, 0.17, 0, 1) 5s;
+  top: -5%;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 0.5rem;
+    height: 50rem;
+    left: 18%;
+    top: -200%;
+    background-color: $rope-color;
+    z-index: 0;
+  }
+}
+
+.moon-wrapper {
   position: absolute;
   transform: translateX(-50%);
-  top: 10rem;
-  left: 50%;
-  animation: moveFromDown cubic-bezier(0.93, -0.1, 0.39, 1.02) 1s;
+  top: 35%;
+  left: 54%;
+  animation: moon cubic-bezier(0.93, -0.1, 0.39, 1.02) 3s;
+  transform-origin: top center;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 0.5rem;
+    height: 42rem;
+    left: 50%;
+    top: -500%;
+    background-color: $rope-color;
+    z-index: 0;
+  }
 }
 
-.cloud {
+.moon {
+  position: relative;
+  z-index: 100;
+  transform-origin: 50% 50%;
+  animation: spin cubic-bezier(0.93, -0.1, 0.39, 1.02) 2s;
+  animation-delay: 1s;
+}
+
+.cloud-wrapper {
   position: absolute;
   transform: translateX(-50%);
   filter: drop-shadow(0 2rem 4rem rgba(232, 226, 232, 0.2));
+  display: inline-block;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 0.5rem;
+    height: 20rem;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: -50%;
+    background-color: $rope-color;
+    z-index: 0;
+  }
 
   &--1 {
     top: 5rem;
-    max-width: 20rem;
+    width: 20rem;
     left: 65%;
     animation: moveLeft cubic-bezier(0.93, -0.1, 0.39, 1.02) 1.2s;
+
+    &::after {
+      left: 50%;
+      top: -50%;
+    }
   }
 
   &--2 {
     top: 2rem;
-    max-width: 40rem;
+    width: 40rem;
     left: 35%;
     animation: moveRight cubic-bezier(0.93, -0.1, 0.39, 1.02) 1.2s;
+
+    &::after {
+      left: 50%;
+      top: -10%;
+    }
   }
+}
+
+.cloud {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  z-index: 100;
 }
 
 .wave {
@@ -43,7 +124,7 @@
     top: 88%;
     fill: $primary-light;
     z-index: 2;
-    animation: waveToLeft linear 40s infinite;
+    animation: waveToLeft linear 30s infinite;
   }
 
   &--2 {
@@ -58,15 +139,34 @@
     fill: $primary-dark;
     z-index: 0;
     animation: waveToLeft linear 60s infinite;
+    filter: drop-shadow(0 10rem 15rem rgba($primary-dark, 0.8));
   }
+}
 
-  &--dragon {
-    position: absolute;
-    width: 200%;
-    top: 80%;
-    fill: $secondary-dark;
-    animation: wave linear 30s infinite;
-    filter: drop-shadow(0 2rem 2rem rgba($secondary-light, 0.3));
-    z-index: 0;
-  }
+.section-1 {
+  position: relative;
+  height: 100vh;
+  transform: translateY(-73vh);
+  background-color: $primary-light-2;
+}
+
+//WAVE DIVIDERS SVG
+.wave-divider--1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.wave-divider--1 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 371px;
+}
+
+.wave-divider--1 .shape-fill {
+  fill: #4abf7b;
 }

@@ -49,7 +49,10 @@ export default function Button({
   return (
     <button
       onClick={handleClick}
-      className={classNames("button", { "button--outlined": outlined })}
+      className={classNames("button", {
+        "button--outlined": outlined,
+        "button--ripple-hover": ripple,
+      })}
       style={
         outlined
           ? { color: mainColor }
