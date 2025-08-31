@@ -9,6 +9,24 @@ export default function Page() {
   return (
     <>
       <div className="section-logo">
+        <div className="buttons-wrapper">
+          <div className="buttons">
+            <Button
+              content="Cadastrar"
+              ripple
+              outlined
+              mainColor="var(--surface-100)"
+              rippleColor="var(--surface-100)"
+            />
+            <Button
+              content="Login"
+              outlined
+              ripple
+              mainColor="var(--surface-100)"
+              rippleColor="var(--surface-100)"
+            />
+          </div>
+        </div>
         <div className="moon-wrapper">
           <LogoMoon className="moon" />
         </div>

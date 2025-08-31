@@ -142,9 +142,6 @@ body {
   font-weight: 600;
   transition: all 0.2s ease;
 }
-.button:hover {
-  transform: scale(0.95);
-}
 .button > .button--ripple {
   width: 1.5rem;
   height: 1.5rem;
@@ -168,6 +165,21 @@ body {
   overflow: hidden;
   position: relative;
   transform: translateY(-95vh);
+}
+
+.buttons-wrapper {
+  display: flex;
+  position: absolute;
+  top: 0;
+  padding: 3rem;
+  padding-right: 10rem;
+  width: 100%;
+  justify-content: flex-end;
+}
+
+.buttons {
+  display: flex;
+  gap: 2rem;
 }
 
 .section-logo {

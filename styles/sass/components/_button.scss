@@ -11,10 +11,6 @@
   font-weight: 600;
   transition: all 0.2s ease;
 
-  &:hover {
-    transform: scale(0.95);
-  }
-
   & > &--ripple {
     width: 1.5rem;
     height: 1.5rem;
