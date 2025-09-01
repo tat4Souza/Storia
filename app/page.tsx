@@ -8,7 +8,12 @@ import Waves from "./(shared)/Waves";
 export default function Page() {
   return (
     <>
-      <div className="section-logo">
+      <div className="section-logo ">
+        <span className="star star--1"></span>
+        <span className="star star--2"></span>
+        <span className="star star--3"></span>
+        <span className="star star--4"></span>
+        <span className="star star--5"></span>
         <div className="buttons-wrapper">
           <div className="buttons">
             <Button
@@ -31,7 +36,7 @@ export default function Page() {
           <LogoMoon className="moon" />
         </div>
         <div className="logo-wrapper">
-          <LogoLetters />
+          <LogoLetters className="logo" />
         </div>
         <div className="cloud-wrapper cloud-wrapper--1">
           <Cloud1 className="cloud" />
@@ -39,12 +44,18 @@ export default function Page() {
         <div className="cloud-wrapper cloud-wrapper--2">
           <Cloud2 className="cloud" />
         </div>
-        {/* <Button
-          content="Login"
-          ripple
-          mainColor="var(--primary)"
-          rippleColor="var(--surface-100)"
-        /> */}
+        <div className="star-wrapper star-wrapper--1">
+          <img
+            src="/img/4pointStars_storia.png"
+            className="star__img star__img--1"
+          />
+        </div>
+        <div className="star-wrapper star-wrapper--2">
+          <img
+            src="/img/4pointStars_storia.png"
+            className="star__img star__img--2"
+          />
+        </div>
       </div>
       <div className="wave-container">
         <Waves className="wave wave--1" />
