@@ -1,30 +1,27 @@
+import Boats from "./(illustrator_components)/Boats";
 import Cloud1 from "./(illustrator_components)/Cloud1";
 import Cloud2 from "./(illustrator_components)/Cloud2";
 import Button from "./(shared)/Button";
 import LogoLetters from "./(shared)/LogoLetters";
 import LogoMoon from "./(shared)/LogoMoon";
 import Waves from "./(shared)/Waves";
+import Clouds from "./login/Clouds";
 
 export default function Page() {
   return (
     <>
-      <div className="section-logo ">
-        <span className="star star--1"></span>
-        <span className="star star--2"></span>
-        <span className="star star--3"></span>
-        <span className="star star--4"></span>
-        <span className="star star--5"></span>
+      <section className="section-logo__container">
         <div className="buttons-wrapper">
           <div className="buttons">
             <Button
-              content="Cadastrar"
+              content="Login"
               ripple
               outlined
               mainColor="var(--surface-100)"
               rippleColor="var(--surface-100)"
             />
             <Button
-              content="Login"
+              content="Cadastrar"
               outlined
               ripple
               mainColor="var(--surface-100)"
@@ -32,34 +29,46 @@ export default function Page() {
             />
           </div>
         </div>
-        <div className="moon-wrapper">
-          <LogoMoon className="moon" />
+        <div className="section-logo ">
+          <span className="star star--1"></span>
+          <span className="star star--2"></span>
+          <span className="star star--3"></span>
+          <span className="star star--4"></span>
+          <span className="star star--5"></span>
+
+          <div className="moon-wrapper">
+            <LogoMoon className="moon" />
+          </div>
+          <div className="logo-wrapper">
+            <LogoLetters className="logo" />
+          </div>
+          <div className="cloud-wrapper cloud-wrapper--1">
+            <Cloud1 className="cloud" />
+          </div>
+          <div className="cloud-wrapper cloud-wrapper--2">
+            <Cloud2 className="cloud" />
+          </div>
+          <div className="star-wrapper star-wrapper--1">
+            <img
+              src="/img/4pointStars_storia.png"
+              className="star__img star__img--1"
+            />
+          </div>
+          <div className="star-wrapper star-wrapper--2">
+            <img
+              src="/img/4pointStars_storia.png"
+              className="star__img star__img--2"
+            />
+          </div>
         </div>
-        <div className="logo-wrapper">
-          <LogoLetters className="logo" />
-        </div>
-        <div className="cloud-wrapper cloud-wrapper--1">
-          <Cloud1 className="cloud" />
-        </div>
-        <div className="cloud-wrapper cloud-wrapper--2">
-          <Cloud2 className="cloud" />
-        </div>
-        <div className="star-wrapper star-wrapper--1">
-          <img
-            src="/img/4pointStars_storia.png"
-            className="star__img star__img--1"
-          />
-        </div>
-        <div className="star-wrapper star-wrapper--2">
-          <img
-            src="/img/4pointStars_storia.png"
-            className="star__img star__img--2"
-          />
-        </div>
-      </div>
+        <Clouds />
+      </section>
+
       <div className="wave-container">
         <Waves className="wave wave--1" />
+        <Boats className="boats boats--1" />
         <Waves className="wave wave--2" flip />
+        <Boats className="boats boats--2" />
         <Waves className="wave wave--3" />
       </div>
 

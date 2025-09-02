@@ -121,6 +121,11 @@
     opacity: 1;
   }
 }
+@keyframes boat-sail {
+  to {
+    offset-distance: 100%;
+  }
+}
 :root {
   --surface-100: hsl(0, 18%, 96%);
   --primary-light: hsl(145, 48%, 52%);
@@ -162,6 +167,8 @@ body {
   font-family: "Noto Sans";
   font-weight: 600;
   transition: all 0.2s ease;
+  z-index: 1000;
+  text-transform: uppercase;
 }
 .button > .button--ripple {
   width: 1.5rem;
@@ -188,6 +195,31 @@ body {
   transform: translateY(-95vh);
 }
 
+.wave {
+  width: 200%;
+  position: absolute;
+  filter: drop-shadow(0 2rem 2 rem rgba(73.848, 191.352, 122.808, 0.3));
+}
+.wave--1 {
+  top: 88%;
+  fill: hsl(145, 48%, 52%);
+  z-index: 200;
+  animation: waveToLeft linear 30s infinite;
+}
+.wave--2 {
+  top: 82%;
+  fill: #389f6f;
+  z-index: 100;
+  animation: waveToRight linear 50s infinite;
+}
+.wave--3 {
+  top: 75%;
+  fill: #2a795f;
+  z-index: 0;
+  animation: waveToLeft linear 60s infinite;
+  filter: drop-shadow(0 10rem 15rem rgba(42, 121, 95, 0.8));
+}
+
 .buttons-wrapper {
   display: flex;
   position: absolute;
@@ -203,7 +235,7 @@ body {
   gap: 2rem;
 }
 
-.section-logo {
+.section-logo__container {
   height: 100vh;
   width: 100%;
   background-color: hsl(0, 11%, 7%);
@@ -211,7 +243,15 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.section-logo {
   position: relative;
+  width: 90%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .star {
@@ -347,6 +387,7 @@ body {
   position: absolute;
   opacity: 0;
   animation: starsFadeIn 1s ease forwards;
+  pointer-events: none;
 }
 .star-wrapper::after {
   content: "";
@@ -386,29 +427,83 @@ body {
   transform: rotate(-10deg);
 }
 
-.wave {
-  width: 200%;
+.boats {
   position: absolute;
-  filter: drop-shadow(0 2rem 2 rem rgba(73.848, 191.352, 122.808, 0.3));
+  height: 30rem;
+  bottom: 0;
+  z-index: 10;
+  offset-path: path("M0 100 Q150 50 300 100 T600 100 T900 100 T1200 100 T1500 100 T1800 100 T2000 100");
+  offset-rotate: auto;
 }
-.wave--1 {
-  top: 88%;
-  fill: hsl(145, 48%, 52%);
-  z-index: 2;
-  animation: waveToLeft linear 30s infinite;
+.boats--1 {
+  animation: boat-sail 60s linear infinite reverse;
+  bottom: 2rem;
+  transform: scaleX(-1);
 }
-.wave--2 {
-  top: 82%;
-  fill: #389f6f;
-  z-index: 1;
-  animation: waveToRight linear 50s infinite;
+.boats--2 {
+  z-index: 100;
+  bottom: -5%;
+  animation: boat-sail 55s linear infinite;
 }
-.wave--3 {
-  top: 75%;
-  fill: #2a795f;
-  z-index: 0;
-  animation: waveToLeft linear 60s infinite;
-  filter: drop-shadow(0 10rem 15rem rgba(42, 121, 95, 0.8));
+
+.cloud-background {
+  position: absolute;
+  bottom: 10rem;
+  background-color: rgba(236.181, 227.919, 227.919, 0.04);
+  height: 30rem;
+  width: 10rem;
+  animation: fadeIn 1s ease;
+}
+.cloud-background--1 {
+  left: 0;
+  width: 15%;
+  bottom: 5rem;
+  border-top-right-radius: 50%;
+}
+.cloud-background--2 {
+  bottom: 35%;
+  left: 0;
+  height: 7%;
+  border-top-right-radius: 10rem;
+  border-bottom-right-radius: 10rem;
+}
+.cloud-background--3 {
+  left: 0;
+  height: 15%;
+  width: 25%;
+  border-top-right-radius: 10rem;
+  border-bottom-right-radius: 10rem;
+}
+.cloud-background--4 {
+  right: 0;
+  height: 35%;
+  width: 15%;
+  border-top-left-radius: 50%;
+}
+.cloud-background--5 {
+  right: 0;
+  height: 20%;
+  width: 20%;
+  border-top-left-radius: 50%;
+}
+.cloud-background--5 {
+  right: 0;
+  height: 20%;
+  width: 20%;
+  border-top-left-radius: 50%;
+}
+.cloud-background--6 {
+  right: 18%;
+  bottom: 30%;
+  height: 5%;
+  width: 8%;
+  border-radius: 10rem;
+}
+.cloud-background--7 {
+  right: 19%;
+  bottom: 34%;
+  height: 4%;
+  border-radius: 10rem;
 }
 
 .section-1 {

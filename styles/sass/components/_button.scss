@@ -10,6 +10,8 @@
   font-family: $default-font-family;
   font-weight: 600;
   transition: all 0.2s ease;
+  z-index: 1000;
+  text-transform: uppercase;
 
   & > &--ripple {
     width: 1.5rem;

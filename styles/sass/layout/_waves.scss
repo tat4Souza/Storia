@@ -1,0 +1,34 @@
+.wave-container {
+  height: 95vh;
+  overflow: hidden;
+  position: relative;
+  transform: translateY(-95vh);
+}
+
+.wave {
+  width: 200%;
+  position: absolute;
+  filter: drop-shadow(0 2rem 2 rem rgba($primary-light, 0.3));
+
+  &--1 {
+    top: 88%;
+    fill: $primary-light;
+    z-index: 200;
+    animation: waveToLeft linear 30s infinite; //30s
+  }
+
+  &--2 {
+    top: 82%;
+    fill: $primary;
+    z-index: 100;
+    animation: waveToRight linear 50s infinite; //50s
+  }
+
+  &--3 {
+    top: 75%;
+    fill: $primary-dark;
+    z-index: 0;
+    animation: waveToLeft linear 60s infinite; //60s
+    filter: drop-shadow(0 10rem 15rem rgba($primary-dark, 0.8));
+  }
+}

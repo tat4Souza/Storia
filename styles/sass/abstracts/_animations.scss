@@ -148,3 +148,9 @@
     opacity: 1;
   }
 }
+
+@keyframes boat-sail {
+  to {
+    offset-distance: 100%;
+  }
+}
