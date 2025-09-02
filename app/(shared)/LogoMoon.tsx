@@ -1,5 +1,3 @@
 export default function LogoMoon({ className }: { className?: string }) {
-  return (
-    <img width={76} className={className} src="/img/moon.png" alt="Logo" />
-  );
+  return <img className={className} src="/img/moon.png" alt="Logo" />;
 }

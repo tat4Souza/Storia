@@ -7,6 +7,7 @@ export default function Button({
   onClick,
   rippleColor,
   outlined,
+  className,
   mainColor = "var(--primary)",
   ripple = false,
 }: {
@@ -16,6 +17,7 @@ export default function Button({
   outlined?: boolean;
   mainColor?: string;
   ripple?: boolean;
+  className?: string;
 }) {
   const [isRipple, setIsRipple] = useState(false);
   const [coords, setCoords] = useState({ x: -1, y: -1 });
@@ -49,7 +51,7 @@ export default function Button({
   return (
     <button
       onClick={handleClick}
-      className={classNames("button", {
+      className={classNames("button", className, {
         "button--outlined": outlined,
         "button--ripple-hover": ripple,
       })}
