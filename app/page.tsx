@@ -42,6 +42,10 @@ export default function Page() {
           <div className="logo-wrapper">
             <LogoLetters className="logo" />
           </div>
+          <p className="overview">
+            O site gratuito para organizar melhor suas ideias e mundos
+            ficticios. Cadastre-se agora e já comece a criar.
+          </p>
           <div className="cloud-wrapper cloud-wrapper--1">
             <Cloud1 className="cloud" />
           </div>
